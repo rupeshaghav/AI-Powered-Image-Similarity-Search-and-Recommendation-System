@@ -15,8 +15,10 @@ Dataset is not included in the repository due to size constraints.
 
 ## How to Run
 1.⁠ ⁠Install dependencies:
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 2.⁠ ⁠Generate embeddings
-3.⁠ ⁠Run:
-python app/ui_local.py
+3. Activate virtual enviornment :
+  source venv/bin/activate
+4.⁠ ⁠Run:
+  python app/ui_local.py
