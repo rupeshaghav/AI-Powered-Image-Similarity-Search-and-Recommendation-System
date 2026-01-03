@@ -22,3 +22,8 @@ Dataset is not included in the repository due to size constraints.
   source venv/bin/activate
 4.⁠ ⁠Run:
   python app/ui_local.py
+
+
+  
+Note: On Windows, the model runs on CPU by default.
+GPU acceleration (CUDA) can be enabled if supported.
