@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Powered Image Similarity Search and Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        .query-image {
+            margin-bottom: 30px;
+        }
+
+        .query-image img {
+            max-width: 250px;
+            border: 1px solid #ddd;
+            padding: 4px;
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .result-card {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .result-card img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+
+        .score {
+            margin-top: 6px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CLIP-based Visual Search</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if query_image %}
+<div class="query-image">
+    <h3>Query Image</h3>
+    <img src="{{ query_image }}">
+</div>
+{% endif %}
+
+{% if results %}
+<h3>Top Similar Images</h3>
+<div class="results">
+    {% for result in results %}
+    <div class="result-card">
+        <img src="/image?path={{ result.path }}">
+        <div class="score">
+            Score: {{ result.score | round(3) }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+</body>
+</html>
