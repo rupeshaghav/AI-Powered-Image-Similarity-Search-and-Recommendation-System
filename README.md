@@ -26,4 +26,4 @@ Dataset is not included in the repository due to size constraints.
 
   
 Note: On Windows, the model runs on CPU by default.
-GPU acceleration (CUDA) can be enabled if supported.
+The system is cross-platform and runs on Windows, macOS, and Linux. Hardware acceleration is automatically selected when available.
